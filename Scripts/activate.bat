@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=C:\dev\Pluralsight Djangular Tutorial"
+set "VIRTUAL_ENV=E:\webApps\djangular_tutorial\djangular"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"
@@ -14,7 +14,7 @@ if defined _OLD_VIRTUAL_PYTHONHOME (
 )
 
 set "_OLD_VIRTUAL_PROMPT=%PROMPT%"
-set "PROMPT=(Pluralsight Djangular Tutorial) %PROMPT%"
+set "PROMPT=(djangular) %PROMPT%"
 
 if defined PYTHONHOME (
     set "_OLD_VIRTUAL_PYTHONHOME=%PYTHONHOME%"

@@ -1,61 +1,20 @@
 (function(){
-	"use strict";
+	'use strict';
+	angular.module('scrumboard.demo', [])
+		.controller('ScrumboardController', ['$scope', '$http', ScrumboardController]);
 
-	angular.module("scrumboard.demo", []).controller("ScrumboardController", ["$scope", ScrumboardController]);
-
-	function ScrumboardController($scope) {
-
-		$scope.addCard = function(List, title) {
+	
+	function ScrumboardController($scope, $http) {
+		$scope.add = function(list, title) {
 			var card = {
 				title: title
+				};
+
+				list.cards.push(card);
 			};
-
-			List.cards.push(card);
-		}
-
-		$scope.clearPage = function() {
-			var input = document.getElementsByTagName("input");
-			for(var i = 0; i < input.length; i++) {
-				input[i].value = "";
-			}
-		}
-
-		$scope.data = [
-			{
-				name: 'List 1',
-				cards: [
-					{
-						title: "Card 1"
-					},
-					{
-						title: "Card 2"
-					}
-				]
-			},
-			{
-				name: 'List 1',
-				cards: [
-					{
-						title: "Card 1"
-					},
-					{
-						title: "Card 2"
-					}
-				]
-			},
-			{
-				name: 'List 1',
-				cards: [
-					{
-						title: "Card 1"
-					},
-					{
-						title: "Card 2"
-					}
-				]
-			}
-		]
+		$scope.data = {};
+		$http.get('/scrumboard/lists').then(function(response) {
+			$scope.data = response.data;
+		})
 	}
-
-
 }());

@@ -27,14 +27,14 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\dev\Pluralsight Djangular Tutorial"
+$env:VIRTUAL_ENV="E:\webApps\djangular_tutorial\djangular"
 
 # Set the prompt to include the env name
 # Make sure _OLD_VIRTUAL_PROMPT is global
 function global:_OLD_VIRTUAL_PROMPT {""}
 copy-item function:prompt function:_OLD_VIRTUAL_PROMPT
 function global:prompt {
-    Write-Host -NoNewline -ForegroundColor Green '(Pluralsight Djangular Tutorial) '
+    Write-Host -NoNewline -ForegroundColor Green '(djangular) '
     _OLD_VIRTUAL_PROMPT
 }
 

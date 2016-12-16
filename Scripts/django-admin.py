@@ -1,4 +1,4 @@
-#!c:\dev\pluralsight djangular tutorial\scripts\python.exe
+#!e:\webapps\djangular_tutorial\djangular\scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":
