@@ -20,5 +20,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home/', TemplateView.as_view(template_name = "scrumboard/home.html")),
-    url(r'^scrumboard/', include('scrumboard.urls'))
+    url(r'^scrumboard/', include('scrumboard.urls')),
+    url(r'^auth_api/', include('auth_api.urls'))
 ]
