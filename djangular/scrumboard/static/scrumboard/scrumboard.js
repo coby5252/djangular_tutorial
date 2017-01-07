@@ -12,8 +12,14 @@
 
 				list.cards.push(card);
 			};
+
+		$scope.login = function() {
+			$http.post('/auth_api/login/',
+				{username: 'coby', password: 'P@s5w0rd1'});
+		};
+
 		$scope.data = {};
-		$http.get('/scrumboard/lists').then(function(response) {
+		$http.get('/scrumboard/lists/').then(function(response) {
 			$scope.data = response.data;
 		})
 	}
