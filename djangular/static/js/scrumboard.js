@@ -7,10 +7,16 @@
 	function ScrumboardController($scope, $http) {
 		$scope.add = function(list, title) {
 			var card = {
+				list: list.id,
 				title: title
 				};
 
-				list.cards.push(card);
+				$http.post('/scrumboard/cards/', card).then(function(response) {
+					list.cards.push(response.data);
+				}, 
+				function() {
+					alert('no can do, buckaroo');
+				});
 			};
 
 		$scope.login = function() {
